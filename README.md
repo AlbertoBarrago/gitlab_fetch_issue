@@ -11,7 +11,7 @@ pip install -r requirements.txt
 
 __Run App__
 ```bash 
-python3 app.py
+flusk run
 ```
 
 Result sample
