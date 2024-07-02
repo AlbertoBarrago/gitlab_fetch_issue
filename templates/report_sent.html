@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Report Sent</title>
+</head>
+<body>
+    <h1>Report Sent</h1>
+    <p>Report has been sent to {{ email }}</p>
+    <p>Please check your email for the report.</p>
+    <h2>Project List:</h2>
+    <ul>
+        {% for project in project_list %}
+            <li>
+                <strong>Project ID:</strong> {{ project.id }}<br>
+                <strong>Title:</strong> {{ project.title }}<br>
+                <strong>Description:</strong> {{ project.description }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
