@@ -11,6 +11,11 @@ def hello_world():  # put application's code here
     return render_template('routes.html')
 
 
+@app.route('/favicon.ico')
+def favicon_ico():  # put application's code here
+    return app.send_static_file('favicon.png')
+
+
 @app.route('/report', methods=['GET', 'POST'])
 def report():
     if request.method == 'POST':
