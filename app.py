@@ -24,7 +24,7 @@ def report():
         try:
             validate_email(receiver_email)
         except EmailNotValidError as e:
-            return render_template('report.html', error=True)
+            return render_template('report.html', error=True, exception=e)
 
         # Fetch project issues (replace with actual function)
         project_list = create_issue_list()

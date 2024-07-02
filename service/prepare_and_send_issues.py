@@ -44,9 +44,8 @@ def extract_description(issue):
 
 
 def send_email_with_project_issues(receiver_email):
-    while not validate_email(receiver_email):
-        print("Invalid email! \n😜Dont' be like 👋nis \nPlease try again.")
-        receiver_email = input("Please enter the receiver's email: ")
+    if not validate_email(receiver_email):
+        return 'Invalid email format: {0}'.format(receiver_email)
 
     send_email_with_attachment(email_smtp,
                                email_port,

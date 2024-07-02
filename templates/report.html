@@ -2,17 +2,26 @@
 <html lang="en">
 <head>
     <title>Project Issues Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/report.css') }}">
 </head>
 <body>
+<div class="container">
     <h1>Send Project Issues Report</h1>
-    <form method="POST">
+    <form id="reportForm" method="POST">
         <label for="email">Enter your email:</label><br>
         <input type="email" id="email" name="email" required><br>
         {% if error %}
             <p style="color: red;">Invalid email! Please enter a valid email address.</p>
         {% endif %}
         <br>
+        <button id="backButton">Go Back</button>
         <button type="submit">Send Report</button>
     </form>
+</div>
+<script>
+    document.getElementById('backButton').addEventListener('click', function () {
+        window.location.href = '/';
+    });
+</script>
 </body>
 </html>

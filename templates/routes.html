@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Routes</title>
+    <title>Instructions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/routes.css') }}">
 </head>
 <body>
-    <h1>Present Routes</h1>
-   <ul>
-       <li>
-           <p>Go to report endpoint and compile form with email</p>
-           <strong>GET :: POST</strong> /report
-       </li>
-   </ul>
-
+    <div class="container">
+        <h1>Fetching issue from gitlab</h1>
+        <ul class="route-list">
+           <li>
+               <p>Go to report endpoint and compile form with email</p>
+               <strong>GET :: POST</strong> /report <br>
+               <button id="goToReport">Open Report</button>
+           </li>
+       </ul>
+    </div>
+<script>
+        document.getElementById('goToReport').addEventListener('click', function () {
+            window.location.href = '/report';
+        });
+    </script>
 </body>
 </html>

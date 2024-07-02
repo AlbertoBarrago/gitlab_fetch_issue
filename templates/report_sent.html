@@ -2,20 +2,29 @@
 <html lang="en">
 <head>
     <title>Report Sent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/report_sent.css') }}">
 </head>
 <body>
+<div class="container">
     <h1>Report Sent</h1>
     <p>Report has been sent to {{ email }}</p>
     <p>Please check your email for the report.</p>
     <h2>Project List:</h2>
-    <ul>
+    <ul class="project-list">
         {% for project in project_list %}
             <li>
-                <strong>Project ID:</strong> {{ project.id }}<br>
+                <strong>Issue ID:</strong> {{ project.id }}<br>
                 <strong>Title:</strong> {{ project.title }}<br>
                 <strong>Description:</strong> {{ project.description }}
             </li>
         {% endfor %}
     </ul>
+    <button id="backButton">Back to main view</button>
+</div>
+    <script>
+        document.getElementById('backButton').addEventListener('click', function () {
+            window.location.href = '/';
+        });
+    </script>
 </body>
 </html>
